@@ -1,0 +1,11 @@
+Package: HCV
+Type: Package
+Title: Package to Analyse HCV Data
+Version: 0.1
+Date: 2019-10-28
+Author: Benjamin M. Taylor and Paula E. Moraga-Serrano
+Maintainer: Benjamin M. Taylor <b.taylor@lancaster.ac.uk>
+Description: Modelling HCV data using partial likelihood.
+License: GPL-3
+Imports: utils
+RoxygenNote: 6.1.1
