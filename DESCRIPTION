@@ -9,3 +9,4 @@ Description: Modelling HCV data using partial likelihood.
 License: GPL-3
 Imports: utils
 RoxygenNote: 6.1.1
+Encoding: UTF-8

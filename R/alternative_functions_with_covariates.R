@@ -283,7 +283,7 @@ simulateProcess <- function(param,startcell,nmax,nrow=10,ncol=10,iForm=NULL,sFor
         N[1] <- ncol(inf)
     }
     if(!is.null(sForm)){
-        sus <- model.matrix(sForm,dat)
+        sus <- try(model.matrix(sForm,dat))
         sus <- sus[,-1,drop=FALSE] # remove intercept
         N[2] <- ncol(sus)
     }
@@ -305,7 +305,8 @@ simulateProcess <- function(param,startcell,nmax,nrow=10,ncol=10,iForm=NULL,sFor
         num <- colSums(rho_mats)
 
         if(length(S)>1){
-            infidx <- sample(S,1,prob=num/den)
+            infidx <- try(sample(S,1,prob=num/den))
+            #if(inherits(infidx,"try-error")){browser()}
         }
         else{
             infidx <- S
@@ -324,7 +325,7 @@ simulateProcess <- function(param,startcell,nmax,nrow=10,ncol=10,iForm=NULL,sFor
 
 
 ##' bootCI function
-##'
+##'#print("Bleh!")
 ##' A function to compute boostrapped confidence intervals for the partial likelihood model
 ##'
 ##' @param param backtransformed parameters
